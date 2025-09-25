@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahavir Classes — Test Series 2025</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fc;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px;
+  }
+
+  /* ========== Header ========== */
+  header {
+    background: #1e0fff;
+    color: #fff;
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+
+  .header-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header-title h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+  }
+
+  .header-logo {
+    height: 60px;
+    width: auto;
+  }
+
+  header h2 {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    font-weight: 400;
+  }
+
+  /* ========== Navbar ========== */
+  nav {
+    background: #2e8fa8;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    justify-content: center;
+    overflow-x: auto;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  nav a:hover {
+    background: #fff;
+    color: #1e0fff;
+  }
+
+  /* ========== Layout ========== */
+  .main-content {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .left {
+    flex: 2;
+  }
+
+  .right {
+    flex: 1;
+  }
+
+  /* ========== Sections ========== */
+  section h3 {
+    font-size: 1.2rem;
+    color: #1e0fff;
+    margin-bottom: 0.7rem;
+    border-bottom: 2px solid #1e0fff;
+    display: inline-block;
+  }
+
+  section p {
+    margin-bottom: 1rem;
+  }
+
+  section ul {
+    margin: 0 0 1rem 1.2rem;
+    list-style: disc;
+  }
+
+  section ul li {
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
+    font-size: 0.95rem;
+  }
+
+  /* ========== Table ========== */
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid #ddd;
+  }
+
+  th,
+  td {
+    padding: 8px;
+    text-align: center;
+  }
+
+  th {
+    background: #f0f0ff;
+    color: #333;
+  }
+
+  /* ========== Card ========== */
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin: 1.2rem auto;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 10px;
+    background: #1e0fff;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .btn:hover {
+    background: #1500aa;
+  }
+
+  /* ========== Centers ========== */
+  .centers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .center-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .center-card h3 {
+    margin-bottom: 10px;
+  }
+
+  .view-map-btn {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    background: #2e8fa8;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .view-map-btn:hover {
+    background: #1e6576;
+  }
+
+  /* ========== Modal ========== */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+  }
+
+  .modal .close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #333;
+  }
+
+  .modal-content h2 {
+    margin-bottom: 15px;
+  }
+
+  .modal-content button {
+    background: #2e8fa8;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .modal-content button:hover {
+    background: #1e6576;
+  }
+
+  /* ========== Responsive ========== */
+  @media(max-width:768px) {
+    .main-content {
+      flex-direction: column;
+    }
+
+    .header-title h1 {
+      font-size: 1.4rem;
+    }
+
+    .header-logo {
+      height: 50px;
+    }
+  }
+
+  @media(max-width:480px) {
+    .header-title h1 {
+      font-size: 1.1rem;
+    }
+
+    nav a {
+      font-size: 0.8rem;
+    }
+  }
+  .syllabus-section {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.syllabus-section h3 {
+  font-size: 1.4rem;
+  color: #1e0fff;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #1e0fff;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-title">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWOcSE-50cz42L0pj3gJKr6XK0g2Z5JeeqEQ&s" alt="Logo" class="header-logo">
+      <h1>Mahavir Classes — Test Series 2025</h1>
+    </div>
+    <h2>લક્ષ્ય Test Series</h2>
+  </header>
+
+  <!-- Navbar -->
+<nav>
+  <a href="#about">🎯 About the Series</a>
+  <a href="#join">👨‍🎓 Who Can Join</a>
+  <a href="#schedule">📅 Schedule</a>
+  <a href="#features">💡 Features</a>
+  <a href="#registration">📝 Registration</a>
+  <a href="#syllabus">📘 Syllabus PDF</a>
+  <a href="#centers">📍 Location</a>
+  <a href="#toppers">🏆 Our Toppers</a>    
+</nav>
+
+
+  <div class="container">
+    <div class="main-content">
+      <div class="left">
+        <!-- About -->
+        <section id="about">
+          <h3>🎯 About the Series</h3>
+          <p>👉 Mahavir Classes is organizing a Test Series where even external Class 10 students can participate.
+                  💰 Get 3 Test Series for just ₹500/-</p>
+        </section>
+
+        <!-- Who Can Join -->
+        <section id="join">
+          <h3>👨‍🎓 Who Can Join</h3>
+          <p>Students of classes 10 to 12 aspiring for national and international Olympiads.</p>
+        </section>
+
+        <!-- Schedule -->
+        <section id="schedule">
+          <h3>📅 Test Series Schedule</h3>
+          <div class="table-wrapper">
+            <table>
+              <tr><th>Date</th><th>Day</th><th>Std 10</th><th>Std 12 Science</th><th>Std 12 Commerce</th></tr>
+              <tr><td>28-09-2025</td><td>Thursday</td><td>Maths</td><td>English</td><td>Economics</td></tr>
+              <tr><td>30-09-2025</td><td>Saturday</td><td>Science</td><td>Chemistry</td><td>B.A.</td></tr>
+              <tr><td>01-10-2025</td><td>Sunday</td><td>English</td><td>Computer</td><td>SP</td></tr>
+              <tr><td>02-10-2025</td><td>Tuesday</td><td>S.S.T</td><td>Physics</td><td>Stats</td></tr>
+            </table>
+          </div>
+        </section>
+
+        <!-- Features -->
+        <section id="features">
+          <h3>💡 Features</h3>
+          <ul>
+            <li>Live doubt sessions</li>
+            <li>Practice material</li>
+            <li>Daily quizzes</li>
+          </ul>
+        </section>
+
+        <!-- Registration -->
+        <section id="registration">
+          <h3>📝 Registration Details</h3>
+          <p><b>Last Date:</b> 31st July 2025</p>
+          <p><b>Contact:</b> 123456789</p>
+          <p><b>Organized by:</b> Prachi Solanki</p>
+        </section>
+      </div>
+
+      <!-- Right -->
+      <div class="right">
+        <div class="card">
+          <iframe width="100%" height="200" src="https://www.youtube.com/embed/_Cb2Rn3yTSo" title="CH1 Revision" frameborder="0" allowfullscreen></iframe>
+          <p>⏳ Few days left!</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSc8XBv5GgoQeBEMxaETqH0ZlRLeLDmt4EWTdSymWbRwpRugag/viewform?embedded=true" class="btn">Register Now</a>
+          <p>Target Class: 10 to 12 ⭐⭐⭐⭐⭐</p>
+        </div>
+      </div>
+    </div>
+    
+   <!-- 📘 Syllabus Section -->
+<section id="syllabus">   
+  <h3>📘 Syllabus PDF</h3>
+  ...
+</section>
+    <div class="card">
+    <p>12th Commerce Syllabus</p>
+    <a href="pdf\Std 12 COM GM Samarthya Syllabus & Timetable.pdf" class="btn" download>⬇ Download File</a>
+  </div>
+
+  <div class="card">
+    <p>12th Science Syllabus</p>
+    <a href="pdf\Std 12 Science Samarthya Syllabus Timetable.pdf" class="btn" download>⬇ Download File</a>
+  </div>
+
+  <div class="card">
+    <p>10th English Medium Syllabus</p>
+    <a href="pdf\STD-10 EM Samarthya Syllabus  & Timetable.pdf" class="btn" download>⬇ Download File</a>
+  </div>
+
+  <div class="card">
+    <p>10th Gujarati Medium Syllabus</p>
+    <a href="pdf\std 10 gm Samarthya Syllabus & Timetable.pdf" class="btn" download>⬇ Download File</a>
+  </div>
+</section>
+
+ <!-- Centers -->
+  <section id="centers">
+    <h2 style="text-align:center; margin-bottom:1rem;">Our Centers Locations📍</h2>
+    <p style="text-align:center; color:#666; margin-bottom:2rem;">Choose a center near you — click "View Map".</p>
+
+    <div class="center-card">
+      <h2>Center 1</h2>
+      <p>ARYABHATT CENTER</p>
+      <p>📍 Narayan Kunj Vihar, Bholav, Bharuch</p>
+      <p>📞 0000000000</p>
+      <button class="view-map-btn" data-lat="21.706187" data-lng="72.994922" data-title="Center 1 — ARYABHATT CENTER">📍 View Map</button>
+    </div>
+
+    <div class="center-card">
+      <h2>Center 2</h2>
+      <p>CV RAMAN CENTER</p>
+      <p>📍 Zadeshwar Rd, Ramvatika Society, Bharuch</p>
+      <p>📞 0000000000</p>
+      <button class="view-map-btn" data-lat="21.703679" data-lng="73.003516" data-title="Center 2 — CV RAMAN CENTER">📍 View Map</button>
+    </div>
+
+    <div class="center-card">
+      <h2>Center 3</h2>
+      <p>RAMANUJAN CENTER</p>
+      <p>📍 Harihar Complex, Bholav, Bharuch</p>
+      <p>📞 0000000000</p>
+      <button class="view-map-btn" data-lat="21.702985" data-lng="73.003785" data-title="Center 3 — RAMANUJAN CENTER">📍 View Map</button>
+    </div>
+
+    <div class="center-card">
+      <h2>Center 4</h2>
+      <p>JC BOSE CENTER</p>
+      <p>📍 Shavalik Height, Tavra Road, Bharuch</p>
+      <p>📞 0000000000</p>
+      <button class="view-map-btn" data-lat="21.703121" data-lng="72.991235" data-title="Center 4 — JC BOSE CENTER">📍 View Map</button>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="mapModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle">Center Location</h2>
+      <a id="openInMaps" href="#" target="_blank">
+        <button>Open in Google Maps</button>
+      </a>
+    </div>
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('mapModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const openInMaps = document.getElementById('openInMaps');
+
+    document.querySelectorAll('.view-map-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lat = btn.dataset.lat;
+        const lng = btn.dataset.lng;
+        const title = btn.dataset.title;
+
+        modalTitle.innerText = title;
+        openInMaps.href = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    modal.querySelector('.close').addEventListener('click', () => {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+
+    modal.addEventListener('click', (e) => {
+      if(e.target === modal){
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+  });
+  </script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .slider {
+      position: relative;
+      max-width: 700px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+      background: #fff;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-bottom: 2px solid #eee;
+    }
+
+    .info {
+      padding: 15px;
+    }
+
+  .info h3 {
+  font-size: 24px;     /* naam ka size bada */
+  font-weight: 700;    /* bold */
+  color: #222;         /* dark color */
+  margin-top: 10px;
+  text-transform: capitalize; /* pehla letter bada */
+}
+
+.info p {
+  font-size: 16px;    /* sabhi details thodi badi */
+  color: #555;
+  margin: 4px 0;
+}
+
+/* Agar aap alag size chahte ho class aur medium ke liye */
+.info p:first-of-type {
+  font-size: 18px;    /* Class 10th – 98% */
+  font-weight: 600;   /* thoda bold */
+  color: #333;
+}
+
+.info p:last-of-type {
+  font-size: 17px;    /* Gujarati Medium */
+  font-weight:bold ;
+  color: #444;
+}
+
+
+
+    /* Buttons */
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 18px;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    .prev:hover, .next:hover {
+      background: rgba(0,0,0,0.7);
+    }
+
+    /* Dots (Indicators) */
+    .dots {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 5px;
+      background: #bbb;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background: #333;
+    }
+
+  </style>
+  <!-- ⭐ Our Achievers -->
+<section id="toppers">   
+  <h2 style="text-align:center; margin:20px 0;">🌟 Our Achievers</h2>
+
+  <!-- 🥇 A1 Grade Slider -->
+  <h3 style="text-align:center; margin:15px 0;">🥇 A1 Grade (90% & Above)</h3>
+  <div class="slider a1-slider">
+    <div class="slides">
+
+      <div class="slide">
+        <img src="keshavi.jpg" alt="Keshvi Padmani">
+        <div class="info">
+          <h3>Keshvi Padmani</h3>
+          <p>Class 10th – 98%</p>
+          <p>Gujarati Medium</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="Shivrajsinh .jpg" alt="Shivrajsinh Yadav">
+        <div class="info">
+          <h3>Shivrajsinh Yadav</h3>
+          <p>Class 10th – 97%</p>
+          <p>Gujarati Medium</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="Ayushi.jpg" alt="Ayushi Rathod">
+        <div class="info">
+          <h3>Ayushi Rathod</h3>
+          <p>Class 10th – 93.25%</p>
+          <p>Gujarati Medium</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="Riddhi.jpg" alt="Riddhi Gohel">
+        <div class="info">
+          <h3>Riddhi Gohel</h3>
+          <p>Class 10th – 92.87%</p>
+          <p>Gujarati Medium</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="dev .jpg" alt="Dev Prajapati">
+        <div class="info">
+          <h3>Dev Prajapati</h3>
+          <p>Class 10th – 92.25%</p>
+          <p>Gujarati Medium</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="mahi.jpg" alt="Mahi Gohil">
+        <div class="info">
+          <h3>Mahi Gohil</h3>
+          <p>Class 10th – 91.37%</p>
+          <p>Gujarati Medium</p>
+        </div>
+      </div>
+
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+    <div class="dots"></div>
+  </div>
+
+  <!-- 🥈 A2 Grade Slider -->
+  <h3 style="text-align:center; margin:15px 0;">🥈 A2 Grade (80% – 89%)</h3>
+  <div class="slider a2-slider">
+    <div class="slides">
+
+      <div class="slide">
+        <img src="harshil 12th sci.jpg" alt="Harshil Prajapati">
+        <div class="info">
+          <h3>Harshil Prajapati</h3>
+          <p>Class 12th – 82.9%</p>
+          <p>Science</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="aryan 12th comm.jpg" alt="Aryan Ghariya">
+        <div class="info">
+          <h3>Aryan Ghariya</h3>
+          <p>Class 12th – 87.92%</p>
+          <p>Commerce</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="Nisha.jpg" alt="Nisha Patel">
+        <div class="info">
+          <h3>Nisha Patel</h3>
+          <p>Class 12th – 86%</p>
+          <p>Commerce</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="jay.jpg" alt="Jay Chauhan">
+        <div class="info">
+          <h3>Jay Chauhan</h3>
+          <p>Class 12th – 84%</p>
+          <p>Commerce</p>
+        </div>
+      </div>
+
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+    <div class="dots"></div>
+  </div>
+</section>
+
+
+<!-- 🎨 CSS -->
+<style>
+/* Slider Container */
+.slider {
+  position: relative;
+  max-width: 700px;
+  margin: 25px auto;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  background: #fff;
+}
+
+/* Slides Wrapper */
+.slides {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Single Slide */
+.slide {
+  min-width: 100%;
+  text-align: center;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Student Image */
+.slide img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;       /* zoom adjust karega */
+  object-position: top;    /* Top se crop karega (face visible hoga) */
+  margin: auto;
+  display: block;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+
+/* Info Section */
+.info {
+  padding: 15px;
+}
+.info h3 {
+  margin: 8px 0 4px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #222;
+}
+.info p {
+  margin: 2px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #666;
+}
+
+/* Prev & Next Buttons */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.prev:hover, .next:hover {
+  background: rgba(0,0,0,0.8);
+}
+.prev { left: 12px; }
+.next { right: 12px; }
+
+/* Dots Navigation */
+.dots {
+  text-align: center;
+  padding: 10px 0;
+  background: #fafafa;
+}
+.dot {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.dot.active {
+  background: #333;
+}
+</style>
+
+
+<!-- 🎬 JS -->
+<script>
+function initSlider(selector, interval = 4000) {
+  const slider = document.querySelector(selector);
+  const slides = slider.querySelector('.slides');
+  const slide = slider.querySelectorAll('.slide');
+  const prevBtn = slider.querySelector('.prev');
+  const nextBtn = slider.querySelector('.next');
+  const dotsContainer = slider.querySelector('.dots');
+  let index = 0;
+  let autoSlide;
+
+  // Create Dots
+  slide.forEach((_, i) => {
+    const dot = document.createElement('span');
+    dot.classList.add('dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+      showSlide(i);
+      resetAuto();
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = slider.querySelectorAll('.dot');
+
+  function showSlide(i) {
+    index = (i + slide.length) % slide.length;
+    slides.style.transform = `translateX(${-index * 100}%)`;
+    updateDots();
+  }
+
+  function updateDots() {
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+  }
+
+  nextBtn.addEventListener('click', () => {
+    showSlide(index + 1);
+    resetAuto();
+  });
+  prevBtn.addEventListener('click', () => {
+    showSlide(index - 1);
+    resetAuto();
+  });
+
+  function startAuto() {
+    autoSlide = setInterval(() => {
+      showSlide(index + 1);
+    }, interval);
+  }
+  function resetAuto() {
+    clearInterval(autoSlide);
+    startAuto();
+  }
+
+  startAuto();
+}
+
+// Init both sliders
+initSlider('.a1-slider', 4000);
+initSlider('.a2-slider', 4000);
+</script>
+
+
